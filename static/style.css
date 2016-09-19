@@ -1,0 +1,14 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #b37853;
+}
+
+.navblue {
+  background-color: #e8ad5a;
+  color: white;
+  border: 0px;
+}
+
+.alert {
+  margin-top: -20px;
+}
