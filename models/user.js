@@ -30,6 +30,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
+    // hash the password before saving it into database
     hooks: {
       beforeCreate: function(createdUser, options, cb) {
         // hash the password
@@ -42,7 +43,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
       }
     },
     instanceMethods: {

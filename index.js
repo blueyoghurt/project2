@@ -7,6 +7,7 @@ var passport = require('./config/ppConfig');
 var session = require('express-session');
 var flash = require('connect-flash');
 var morgan = require('morgan');
+// var isLoggedIn = require('./middleware/isLoggedIn');
 
 app.use(session({
   secret: 'Super secrettttt',
@@ -30,14 +31,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function(req, res) {
-  if(res.locals.currentUser)
-  {console.log(res.locals.currentUser.get());}
-  res.render('index');
-});
-
 // initialize the passport configuration and session as middleware
+app.use('/',require ('./controllers/routes'));
 app.use('/auth', require('./controllers/auth'));
+app.use('/product', require('./controllers/product'));
 
 var server = app.listen(process.env.PORT || 3000);
 

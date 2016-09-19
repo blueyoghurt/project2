@@ -12,3 +12,16 @@ body {
 .alert {
   margin-top: -20px;
 }
+
+.profile {
+  width: 200px;
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 130%;
+  color: white;
+  padding: 10px;
+}
+
+/*div {
+  border:2px solid black;
+}*/
