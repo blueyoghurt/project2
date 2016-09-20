@@ -4,18 +4,8 @@ var db = require('../models');
 var isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/',function(req,res){
-  if(res.locals.currentUser)
-  {console.log(res.locals.currentUser.get());}
   res.render('index');
 });
-
-// router.get('/profile',function(req,res){
-//   if(res.locals.currentUser)
-//   {
-//     var fullDate = res.locals.currentUser.createdAt.toLocaleDateString();
-//   }
-//   res.render('profile',{registration: fullDate});
-// });
 
 router.get('/profile', isLoggedIn, function(req, res) {
   var fullDate = res.locals.currentUser.createdAt.toLocaleDateString();

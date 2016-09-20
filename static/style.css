@@ -14,14 +14,14 @@ body {
 }
 
 .profile {
-  width: 200px;
+  width: 180px;
   margin: 0 auto;
   display: inline-block;
   font-size: 130%;
-  color: white;
+  /*color: white;*/
   padding: 10px;
 }
 
-/*div {
-  border:2px solid black;
-}*/
+div {
+  /*border:2px solid black;*/
+}

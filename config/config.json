@@ -2,7 +2,10 @@
   "development": {
     "database": "project2_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "json",
+    "seederStoragePath": "sequelizeData.json",
+    "seederStorageTableName": "project2_development"
   },
   "test": {
     "database": "project2_test",

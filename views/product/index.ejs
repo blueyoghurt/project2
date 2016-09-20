@@ -1,0 +1,41 @@
+<div class="container">
+
+
+  <h1>Inventory List</h1>
+  <div class="well">
+    <div class="profile">NAME</div>
+    <div class="profile">CATEGORY</div>
+    <div class="profile">COST</div>
+    <div class="profile">RRP</div>
+    <div class="profile">QTY</div>
+
+  </div>
+  <%  products.forEach(function(product){ %>
+    <div class="well">
+      <div class="profile">
+        <%= product.name %>
+      </div>
+
+      <div class="profile">
+        <%= product.category %>
+      </div>
+
+      <div class="profile">
+        <%= product.cost %>
+      </div>
+
+      <div class="profile">
+        <%= product.sellingPrice %>
+      </div>
+
+      <div class="profile">
+        <%= product.quantity %>
+      </div>
+      <a href="/product/<%= product.upc %>/edit" class="btn btn-info glyphicon glyphicon-edit"></a>
+      <a href="" class="btn btn-danger glyphicon glyphicon-trash delete-btn" value="<%= product.upc %>"></a>
+
+    </div>
+    <% }); %>
+  </div>
+
+  <script src="/updateProduct.js"></script>
