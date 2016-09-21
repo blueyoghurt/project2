@@ -17,6 +17,15 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
+      avatar: {
+        type: Sequelize.STRING
+      },
+      facebookid: {
+        type: Sequelize.STRING
+      },
+      facebooktoken: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

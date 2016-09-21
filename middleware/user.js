@@ -29,9 +29,10 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     },
-    avatar:DataTypes.STRING,
     facebookid: DataTypes.STRING,
-    facebooktoken: DataTypes.STRING
+    facebooktoken: DataTypes.STRING,
+    facebookemail: DataTypes.STRING,
+    facebookname: DataTypes.STRING
   }, {
     // hash the password before saving it into database
     hooks: {

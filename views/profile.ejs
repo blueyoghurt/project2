@@ -1,7 +1,9 @@
 <div class="container">
 
     <h1><%= currentUser.name %></h1>
-    <img src="images/avatar.jpg"  class="img-thumbnail" width="304" alt="" />
+    <div class="image-container">
+    <img src="<%= currentUser.avatar%>"  class="img-thumbnail"/>
+  </div>
     <div class="row-fluid">
       <div class="profile">Email:</div>
       <div class="profile"><%= currentUser.email %></div>
@@ -11,7 +13,5 @@
       <div class="profile">Member Since:</div>
       <div class="profile"><%= registration %></div>
     </div>
-
-
 
     </div>

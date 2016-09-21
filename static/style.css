@@ -22,6 +22,10 @@ body {
   padding: 10px;
 }
 
+.image-container {
+  max-width:200px;
+}
+
 div {
   /*border:2px solid black;*/
 }

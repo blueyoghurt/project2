@@ -1,6 +1,9 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var db = require('../models');
+var FacebookStrategy = require('passport-facebook').Strategy;
+var configAuth = require('./auth');
+
 
 /*
  * Passport "serializes" objects to make them easy to store, converting the
@@ -55,5 +58,43 @@ passport.use(new LocalStrategy({
   }).catch(cb);
 }));
 
+// =========================================================================
+// FACEBOOK ================================================================
+// =========================================================================
+passport.use(new FacebookStrategy({
+
+  // pull in our app id and secret from our auth.js file
+  clientID        : configAuth.facebookAuth.clientID,
+  clientSecret    : configAuth.facebookAuth.clientSecret,
+  callbackURL     : configAuth.facebookAuth.callbackURL,
+  profileFields   : ['displayName','email','picture.type(large)'],
+  enableProof     : true
+},
+function(accessToken, refreshToken, profile, done) {
+console.log(profile);
+console.log(profile._json.picture);
+  process.nextTick(function () {
+
+        db.user.findOrCreate({ where: { facebookid: profile._json.id },
+            defaults: {
+              name: profile.displayName,
+              email: profile._json.email,
+              password: "qwer1234",
+              facebookid: profile._json.id,
+              avatar: profile._json.picture.data.url,
+              facebooktoken: accessToken
+          }})
+          .spread(function(user, created) {
+            if (created == true) {
+              console.log(user.name + ' was created at - ' + created)
+            } else {
+              console.log(user.name + ' already exists')
+            }
+            return done(null, user)
+          })
+  })
+}));
+
+// facebook will send back the token and profile
 // export the Passport configuration from this module
 module.exports = passport;
