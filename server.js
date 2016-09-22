@@ -9,6 +9,8 @@ var flash = require('connect-flash');
 var morgan = require('morgan');
 var multer = require('multer');
 var upload = multer({ dest: './uploads/' });
+var dotenv = require('dotenv');
+dotenv.load();
 
 app.post('/', upload.single('myFile'), function(req, res) {
   res.send(req.file);
