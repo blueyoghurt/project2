@@ -1,3 +1,4 @@
+<% include ./editFunctions %>
 <div class="container">
   <h1><%= product.name %></h1>
   <form class="edit-form" role="form" id="editProduct" name="<%= product.upc %>">
@@ -15,11 +16,11 @@
       <label for="category">Category</label>
       <select class="form-control" name="category" required>
         <option value="" disabled selected>Please select</option>
-        <option value="Category A">Category A</option>
-        <option value="Category B">Category B</option>
-        <option value="Category C">Category C</option>
-        <option value="Category D">Category D</option>
-        <option value="Category E" id="newOption">Add New</option>
+        <option value="CategoryA" id="CategoryA" class="catOption" <%= isSelected("CategoryA", product.category )%> >Category A</option>
+        <option value="CategoryB" id="CategoryB" class="catOption" <%= isSelected("CategoryB", product.category )%> >Category B</option>
+        <option value="CategoryC" id="CategoryC" class="catOption" <%= isSelected("CategoryC", product.category )%> >Category C</option>
+        <option value="CategoryD" id="CategoryD" class="catOption" <%= isSelected("CategoryD", product.category )%> >Category D</option>
+        <option value="CategoryE" id="newOption" class="catOption">Add New</option>
       </select>
     </div>
 

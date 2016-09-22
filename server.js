@@ -38,6 +38,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+
 // initialize the passport configuration and session as middleware
 app.use('/',require ('./controllers/routes'));
 app.use('/auth', require('./controllers/auth'));
