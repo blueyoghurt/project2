@@ -7,8 +7,10 @@ var upload = multer({ dest: './uploads/' });
 var cloudinary = require('cloudinary');
 
 
-router.get('/', isLoggedIn, function(req, res) {
+router.get('/', isLoggedIn, function(req, res){
+  console.log("DB products are",db.product.findAll());
   db.product.findAll().then(function(products){
+    console.log("products found are",products);
     res.render('product/index' ,{products : products});
   }).catch(function(err) {
     res.status(500).render('404');

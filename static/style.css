@@ -4,8 +4,8 @@ body {
 }
 
 .navblue {
-  background-color: #e8ad5a;
-  color: white;
+  background-color: #919BAB;;
+  color: red;
   border: 0px;
 }
 
@@ -28,6 +28,7 @@ body {
 
 .container {
   margin: 0 auto;
+  position: relative;
 
 }
 
@@ -45,4 +46,30 @@ th, td {
 th{
   font-weight: bold;
   font-size: 20px;
+}
+
+/*#background-home {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: relative;
+}
+
+#background-home::after {
+  content: "";
+  background: url('http://img14.deviantart.net/4944/i/2004/154/7/8/lanman_warehouse.jpg');
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}*/
+
+#background-home {
+  background: url('http://4.bp.blogspot.com/-MqICspDGkqA/UiAbYAdM-ZI/AAAAAAAAKQE/nvB6mDzSFwE/s1600/Background-Warehouse1.jpg');
+  width:100%;
+  opacity: 0.2;
+  position:absolute;
 }
