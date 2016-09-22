@@ -27,6 +27,17 @@ router.get('/:upc/edit',isLoggedIn, function(req, res){
   });
 });
 
+router.get('/:upc/list',isLoggedIn,function(req,res){
+  db.product.findOne({
+    where: {
+      upc: req.params.upc}
+  }).then(function(product){
+    res.render('product/item',{product: product})
+  }).catch(function(){
+    res.status(500).render('404');
+  })
+}); //Get individual item page
+
 router.delete('/:upc', isLoggedIn, function(req,res){
   db.product.destroy({
     where:{
@@ -61,7 +72,7 @@ router.get('/new', isLoggedIn, function(req, res) {
 
 router.post('/new',upload.single('picture'), function(req, res, next){
   cloudinary.uploader.upload(req.file.path, function(result) {
-    req.imgPath = result.url;
+    req.imgPath = result.public_id;
     next()
   });
 }) //How do i set it to upload image only after it has search the database and found that the entry does not exist?
@@ -81,7 +92,7 @@ router.post('/new',function(req, res){
   }).spread(function(product, created){
     if(created){
       req.flash('success','Product created');
-      res.redirect('/');
+      res.redirect('/product');
     } else {
       req.flash('error','Product already exists');
       res.redirect('/product/new');
