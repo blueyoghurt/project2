@@ -3,14 +3,14 @@ var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var app = express();
+var dotenv = require('dotenv');
+dotenv.load();
 var passport = require('./config/ppConfig');
 var session = require('express-session');
 var flash = require('connect-flash');
 var morgan = require('morgan');
 var multer = require('multer');
 var upload = multer({ dest: './uploads/' });
-var dotenv = require('dotenv');
-dotenv.load();
 
 app.post('/', upload.single('myFile'), function(req, res) {
   res.send(req.file);
