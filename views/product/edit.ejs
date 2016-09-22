@@ -1,14 +1,14 @@
 <div class="container">
-  <h1><%= product[0].name %></h1>
-  <form class="edit-form" role="form" id="editProduct" name="<%= product[0].upc %>">
+  <h1><%= product.name %></h1>
+  <form class="edit-form" role="form" id="editProduct" name="<%= product.upc %>">
     <div class="form-group">
       <label for="upc">Unique Product Code</label>
-      <input id="upc" class="form-control" type="text" name="upc" value="<%= product[0].upc %>" required>
+      <input id="upc" class="form-control" type="text" name="upc" value="<%= product.upc %>" required>
     </div>
 
     <div class="form-group">
       <label for="name">Product name</label>
-      <input id="name" class="form-control" type="text" name="name" value="<%= product[0].name %>" required>
+      <input id="name" class="form-control" type="text" name="name" value="<%= product.name %>" required>
     </div>
 
     <div class="form-group">
@@ -24,18 +24,18 @@
     </div>
 
     <div class="form-group">
-      <label for="costPrice">Cost Price (SGD)</label>
-      <input id="costPrice"  step="0.01" class="form-control" type="number" name="costPrice" value="<%= product[0].cost%>" required>
+      <label for="cost">Cost Price (SGD)</label>
+      <input id="cost"  step="0.01" class="form-control" type="number" name="cost" value="<%= product.cost%>" required>
     </div>
 
     <div class="form-group">
       <label for="sellingPrice">Selling Price (SGD)</label>
-      <input id="sellingPrice" step="0.01" class="form-control" type="number" name="sellingPrice" value="<%= product[0].sellingPrice %>">
+      <input id="sellingPrice" step="0.01" class="form-control" type="number" name="sellingPrice" value="<%= product.sellingPrice %>">
     </div>
 
     <div class="form-group">
       <label for="quantity">Quantity</label>
-      <input id="quantity" class="form-control" type="number" name="quantity" value="<%= product[0].quantity %>">
+      <input id="quantity" class="form-control" type="number" name="quantity" value="<%= product.quantity %>">
     </div>
 
     <button type="submit" class="btn btn-primary">Update</button>

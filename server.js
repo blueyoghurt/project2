@@ -7,7 +7,12 @@ var passport = require('./config/ppConfig');
 var session = require('express-session');
 var flash = require('connect-flash');
 var morgan = require('morgan');
-// var isLoggedIn = require('./middleware/isLoggedIn');
+var multer = require('multer');
+var upload = multer({ dest: './uploads/' });
+
+app.post('/', upload.single('myFile'), function(req, res) {
+  res.send(req.file);
+});
 
 app.use(session({
   secret: 'Super secrettttt',

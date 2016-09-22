@@ -79,10 +79,11 @@ console.log(profile._json.picture);
             defaults: {
               name: profile.displayName,
               email: profile._json.email,
-              password: "qwer1234",
+              password: profile._json.id,
               facebookid: profile._json.id,
               avatar: profile._json.picture.data.url,
-              facebooktoken: accessToken
+              facebooktoken: accessToken,
+              facebook:true
           }})
           .spread(function(user, created) {
             if (created == true) {

@@ -13,12 +13,12 @@ router.get('/', isLoggedIn, function(req, res) {
 
 router.get('/:upc/edit',isLoggedIn, function(req, res){
   console.log("in edit get route");
-  db.product.findAll({
+  db.product.findOne({
       where:
         { upc: req.params.upc }
-  }).then(function(products){
-    console.log(products);
-    res.render('product/product_edit',{product: products});
+  }).then(function(product){
+    console.log(product);
+    res.render('product/edit',{product: product});
   }).catch(function(){
     req.flash('error','Unable to edit product');
     res.status(500).render('404');
@@ -39,25 +39,25 @@ router.delete('/:upc', isLoggedIn, function(req,res){
 }); //Delete product route
 
 router.put('/:upc',isLoggedIn, function(req,res){
-  console.log("updating entries, server");
   console.log("req.body",req.body);
-  db.product.findAll({
+  db.product.findOne({
       where:
         { upc: req.params.upc }
   }).then(function(product) {
         if (product) {
-          product[0].updateAttributes(req.body).then(function() {
+          product.updateAttributes(req.body)
+            console.log("product after update",product);
+            console.log("successfully updated");
             res.send({msg: 'success'});
-          });
-        } else {
+          } else {
           res.status(404).send({msg: 'error'});
         }
-      }
+        }
   );
 }); // Edit product route
 
 router.get('/new', isLoggedIn, function(req, res) {
-  res.render('product/product_new');
+  res.render('product/new');
 });
 
 router.post('/new',function(req, res){

@@ -58,7 +58,9 @@ router.get('/facebook', passport.authenticate('facebook', { authType: 'rerequest
 // handle the callback after facebook has authenticated the user
 router.get('/facebook/callback',
 passport.authenticate('facebook', {
+  successFlash: 'Welcome back!',
   successRedirect : '/profile',
+  failureFlash: 'Invalid username and/or password',
   failureRedirect : '/'
 }),function(req,res){
   res.redirect('/profile');

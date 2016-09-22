@@ -25,7 +25,8 @@ $('#editProduct').submit(function(e) {
     type: 'PUT',
     data: data
   }).done(function(){
+    window.location.href = '/product';  
   }).fail(function(){
-    console.log("failed to delete product");
+    console.log("failed to edit product");
   });
 }); //Edit button

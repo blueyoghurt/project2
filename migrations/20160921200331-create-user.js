@@ -26,6 +26,24 @@ module.exports = {
       facebooktoken: {
         type: Sequelize.STRING
       },
+      googleid: {
+        type: Sequelize.STRING
+      },
+      googletoken: {
+        type: Sequelize.STRING
+      },
+      businessid: {
+        type: Sequelize.INTEGER
+      },
+      facebook: {
+        type: Sequelize.BOOLEAN
+      },
+      google: {
+        type: Sequelize.BOOLEAN
+      },
+      method: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
