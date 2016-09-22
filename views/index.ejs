@@ -1,5 +1,26 @@
-<div id="background-home">
+<div id="home-container">
   <div class="container">
-    <h1>Home</h1>
+    <div class="login-container">
+      <form action="/auth/login" method="POST">
+
+        <div class="form-group input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input id="authEmail" class="form-control" type="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="form-group input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="authPassword" class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Log In">
+      </form>
+      <br>
+      <span>Yet to sign up? Sign up <a href="/auth/signup">here!<br></span>
+        <br>
+      <div class="modal-social-icons">
+        <a href='/auth/facebook' class="btn btn-default facebook"><i class="fa fa-facebook"></i>Log In with Facebook </a>
+      </div>
+    </div>
+
   </div>
+  <img src="http://4.bp.blogspot.com/-MqICspDGkqA/UiAbYAdM-ZI/AAAAAAAAKQE/nvB6mDzSFwE/s1600/Background-Warehouse1.jpg"/>
 </div>

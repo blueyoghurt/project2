@@ -16,7 +16,7 @@
   <%  products.forEach(function(product){ %>
   <tr>
     <td><input class="form-check-input" type="checkbox" value="<%= product.upc %>"></td>
-    <td><img src="http://res.cloudinary.com/blueyoghurt/image/upload/w_180,c_lfill,ar_1.5/<%= product.picture %>" width="150px"></td>
+    <td><img src="http://res.cloudinary.com/blueyoghurt/image/upload/w_180,c_lfill,ar_1.5/<%= product.picture %>"></td>
     <td><a href="/product/<%= product.upc %>/list"><%= product.name %></a></td>
     <td><%= product.category %></td>
     <td><%= product.cost %></td>
@@ -26,6 +26,9 @@
     <td><a href="" class="btn btn-danger glyphicon glyphicon-trash delete-btn" value="<%= product.upc %>"></td>
   </tr>
   <% }); %>
+  <tr></td><td colspan="8" text-align="left">
+    <button class="btn btn-default"><a href="">Delete Selected</a></button>
+    <button class="btn btn-default"><a href="">Add Product</a></button></td>
 </table>
 </div>
 </div>

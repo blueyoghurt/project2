@@ -2,47 +2,47 @@
 <div class="container">
   <h1><%= product.name %></h1>
   <form class="edit-form" role="form" id="editProduct" name="<%= product.upc %>">
-    <div class="form-group">
-      <label for="upc">Unique Product Code</label>
-      <input id="upc" class="form-control" type="text" name="upc" value="<%= product.upc %>" required>
+    <div class="form-group row">
+      <label for="upc" class="col-sm-2">Unique Product Code</label>
+      <div class="col-sm-10"><input id="upc" class="form-control" type="text" name="upc" value="<%= product.upc %>" required></div>
     </div>
 
-    <div class="form-group">
-      <label for="name">Product name</label>
-      <input id="name" class="form-control" type="text" name="name" value="<%= product.name %>" required>
+    <div class="form-group row">
+      <label for="name" class="col-sm-2">Product name</label>
+      <div class="col-sm-10"><input id="name" class="form-control" type="text" name="name" value="<%= product.name %>" required></div>
     </div>
 
-    <div class="form-group">
-      <label for="category">Category</label>
-      <select class="form-control" name="category" required>
+    <div class="form-group row">
+      <label for="category" class="col-sm-2">Category</label>
+      <div class="col-sm-10"><select class="form-control" name="category" required>
         <option value="" disabled selected>Please select</option>
         <option value="CategoryA" <%= isSelected("CategoryA", product.category )%> >Category A</option>
         <option value="CategoryB" <%= isSelected("CategoryB", product.category )%> >Category B</option>
         <option value="CategoryC" <%= isSelected("CategoryC", product.category )%> >Category C</option>
         <option value="CategoryD" <%= isSelected("CategoryD", product.category )%> >Category D</option>
         <option value="CategoryE">Add New</option>
-      </select>
+      </select></div>
     </div>
 
-    <div class="form-group">
-      <label for="cost">Cost Price (SGD)</label>
-      <input id="cost"  step="0.01" class="form-control" type="number" name="cost" value="<%= product.cost%>" required>
+    <div class="form-group row">
+      <label for="cost" class="col-sm-2">Cost Price (SGD)</label>
+      <div class="col-sm-10"><input id="cost"  step="0.01" class="form-control" type="number" name="cost" value="<%= product.cost%>" required></div>
     </div>
 
-    <div class="form-group">
-      <label for="sellingPrice">Selling Price (SGD)</label>
-      <input id="sellingPrice" step="0.01" class="form-control" type="number" name="sellingPrice" value="<%= product.sellingPrice %>">
+    <div class="form-group row">
+      <label for="sellingPrice" class="col-sm-2">Selling Price (SGD)</label>
+      <div class="col-sm-10"><input id="sellingPrice" step="0.01" class="form-control" type="number" name="sellingPrice" value="<%= product.sellingPrice %>"></div>
     </div>
 
-    <div class="form-group">
-      <label for="quantity">Quantity</label>
-      <input id="quantity" class="form-control" type="number" name="quantity" value="<%= product.quantity %>">
+    <div class="form-group row">
+      <label for="quantity" class="col-sm-2">Quantity</label>
+      <div class="col-sm-10"><input id="quantity" class="form-control" type="number" name="quantity" value="<%= product.quantity %>"></div>
     </div>
 
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
 
-  <a href="/product">&larr; Back</a>
+  <span class="nav-links"><a href="/product">&larr; Back</a></span>
 
 </div>
 

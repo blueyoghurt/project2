@@ -1,6 +1,55 @@
 <div class="container">
-  <h1><%= product.name%></h1>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-9">
+      <h1><%= product.name%>
+        <a href="/product/<%= product.upc%>/edit" class="btn btn-primary glyphicon glyphicon-edit" value="<%= product.upc %>"></a></h1
+    </div>
+  </div>
+  <div>
+  <div class="col-sm-3">
+    <img class="listing" src="http://res.cloudinary.com/blueyoghurt/image/upload/w_300,c_lfill,ar_1.5/<%= product.picture %>">
+  </div>
 
 
-  <span>Back to <a href ="/product">Inventory</a></span>
+  <div>
+    <div class="col-sm-2 listingtitle">Product UPC:</div>
+    <div class="col-sm-6">
+      <p><%= product.upc %></p>
+    </div>
+  </div>
+  <div>
+    <div class="col-sm-2 listingtitle">Category</div>
+    <div class="col-sm-6">
+      <p><%= product.category %></p>
+    </div>
+  </div>
+  <div>
+    <div class="col-sm-2 listingtitle">Cost(SGD):</div>
+    <div class="col-sm-6">
+      <p><%= product.cost %></p>
+    </div>
+  </div>
+  <div>
+    <div class="col-sm-2 listingtitle">Selling Price(SGD):</div>
+    <div class="col-sm-6">
+      <p><%= product.sellingPrice %></p>
+    </div>
+  </div>
+  <div>
+    <div class="col-sm-2 listingtitle">Quantity:</div>
+    <div class="col-sm-6">
+      <p><%= product.quantity %></p>
+    </div>
+  </div>
+
+
+
+  <div class="navlinkdiv">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-9">
+      <p>Back to <a href ="/product">Inventory</a></p>
+    </div>
+  </div>
+</div>
 </div>

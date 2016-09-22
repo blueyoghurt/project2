@@ -1,12 +1,39 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #b37853;
+  background-image: url('https://heavyeditorial.files.wordpress.com/2013/03/cool-simple-and-minimalist-desktop-wallpaper-the-police-box-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 
-.navblue {
+.navbar-custom  {
   background-color: #919BAB;;
-  color: red;
+  color: white;
   border: 0px;
+}
+
+.listingtitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.listing{
+  float:right;
+  overflow: visible;
+}
+
+.navlinkdiv{
+  clear:both;
+}
+
+.navlinkdiv a {
+  color: black;
+}
+
+.nav-links {
+  font-size: 18px;
+  color: red;
+  background-color: transparent;
 }
 
 .alert {
@@ -18,7 +45,6 @@ body {
   margin: 0 auto;
   display: inline-block;
   font-size: 130%;
-  /*color: white;*/
   padding: 10px;
 }
 
@@ -29,7 +55,12 @@ body {
 .container {
   margin: 0 auto;
   position: relative;
+}
 
+.login-container {
+  background-color: white;
+  padding: 2em;
+  border-radius: 10px;
 }
 
 div {
@@ -48,28 +79,17 @@ th{
   font-size: 20px;
 }
 
-/*#background-home {
-  width: 200px;
-  height: 200px;
-  display: block;
-  position: relative;
+#home-container {
+    position:absolute;
+    width:100%;
 }
 
-#background-home::after {
-  content: "";
-  background: url('http://img14.deviantart.net/4944/i/2004/154/7/8/lanman_warehouse.jpg');
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+#home-container img {
   position: absolute;
+  opacity: 0.3;
+  top: 0;
+  margin-top: -20px;
+  width: 100%;
+  height: auto;
   z-index: -1;
-}*/
-
-#background-home {
-  background: url('http://4.bp.blogspot.com/-MqICspDGkqA/UiAbYAdM-ZI/AAAAAAAAKQE/nvB6mDzSFwE/s1600/Background-Warehouse1.jpg');
-  width:100%;
-  opacity: 0.2;
-  position:absolute;
 }
