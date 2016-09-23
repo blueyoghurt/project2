@@ -12,6 +12,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
+        models.product.belongsTo(models.user, {foreignKey: "createdBy"});
         // associations can be defined here
       }
     }
