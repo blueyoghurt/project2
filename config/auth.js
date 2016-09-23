@@ -6,3 +6,6 @@ module.exports = {
         'callbackURL'   : 'https://inventory-wdi5sg.herokuapp.com/auth/facebook/callback'
     }
 };
+
+
+// 'http://localhost:3000/auth/facebook/callback'
