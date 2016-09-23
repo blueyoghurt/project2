@@ -23,7 +23,7 @@
     <td><%= product.sellingPrice %></td>
     <td><%= product.quantity %></td>
     <td><a href="/product/<%= product.upc %>/edit" class="btn btn-info glyphicon glyphicon-edit"></a></td>
-    <td><a href="" class="btn btn-danger glyphicon glyphicon-trash delete-btn" value="<%= product.upc %>"></td>
+    <td><a href="/product/new" class="btn btn-danger glyphicon glyphicon-trash delete-btn" value="<%= product.upc %>"></td>
   </tr>
   <% }); %>
   <tr></td><td colspan="8" text-align="left">
